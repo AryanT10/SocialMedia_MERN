@@ -8,6 +8,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import path from "path";
 import { fileURLToPath } from 'url';
+import authRoutes from "./routes/auth.js";
 import {register} from "./controllers/auth.js"
 
 // CONFIGURATIONS
@@ -37,6 +38,9 @@ const storage = multer.diskStorage({
 // ROUTES WITH FILES
  //  upload.single("picture") : middleware, register: actual logic
 app.post("/auth/register", upload.single("picture"), register);
+
+// ROUTES
+app.use("auth", authRoutes);
 
 const upload = multer({ storage });
 

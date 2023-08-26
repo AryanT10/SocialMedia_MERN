@@ -27,3 +27,7 @@
 
 -import { fileURLToPath } from 'url';
 //  convert a file URL to a local file path.
+
+status code 201 meaning something has been created
+
+if any error , mongoDB will send status code 500 which will be recieved to frontend

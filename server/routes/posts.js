@@ -1,17 +1,14 @@
 import express from "express";
-import { getFeedPosts, getUserPosts, likePost } from "../controllers/posts.js";
-import { verify } from 'jsonwebtoken';
-import { verifyToken } from '../middleware/auth';
+import { getUserPost, likePost, getFeedPost } from "../controllers/posts.js";
+import { verifyToken } from "../middleware/middlewareAuth.js";
 
 const router = express.Router();
 
-//READ
-// grab user feed when the user is on homepage
-router.get("/", verifyToken, getFeedPosts);
-router.get("/:userId/posts", verifyToken, getUserPosts);
+/* READ */
+router.get("/", verifyToken, getFeedPost);
+router.get("/:userId/posts", verifyToken, getUserPost);
 
-// UPDATE
-
+/* UPDATE */
 router.patch("/:id/like", verifyToken, likePost);
 
 export default router;

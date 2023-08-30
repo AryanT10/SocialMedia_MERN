@@ -32,3 +32,8 @@
 status code 201 meaning something has been created
 
 if any error , mongoDB will send status code 500 which will be recieved to frontend
+
+use Pesticide for Chrome : browser extension to see the components flex-box, flex and all .. recommended
+
+fontSize="clamp(1rem,2rem,2.25rem)" // clamp is a function w can use in css that determines 1rem(minimum),2rem(default),2.25rem(maximum)... value for the font 
+it will always be the default value but just in case thee screen sizer gets too small the font size will change..

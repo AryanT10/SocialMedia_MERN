@@ -37,3 +37,6 @@ use Pesticide for Chrome : browser extension to see the components flex-box, fle
 
 fontSize="clamp(1rem,2rem,2.25rem)" // clamp is a function w can use in css that determines 1rem(minimum),2rem(default),2.25rem(maximum)... value for the font 
 it will always be the default value but just in case thee screen sizer gets too small the font size will change..
+
+yup : form validation : show error if incorrect + required
+yup.object().shape() ======= regex automation

@@ -34,7 +34,7 @@ const UserWidget = ({ userId, picturePath }) => {
 		getUser();
 	}, []);
 
-	if (!user) {
+	if (!user ) {
 		return null;
 	}
 

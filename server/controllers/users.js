@@ -42,7 +42,7 @@ export const addRemoveFriends = async (req, res) => {
 		const user = await User.findById(id);
 		const friend = await User.findById(friendId);
 
-		if (user.friends.include(friendId)) {
+		if (user.friends.includes(friendId)) {
 			user.friends = user.friends.filter((id) => id !== friendId);
 			friend.friends = friend.friends.filter((id) => id !== id);
 		}
@@ -59,8 +59,7 @@ export const addRemoveFriends = async (req, res) => {
 
 		const formattedFriends = friends.map(({ _id, firstName, lastName, occupation, location, picturePath }) => {
 			return { _id, firstName, lastName, occupation, location, picturePath };
-		}
-		);
+		});
 
 		res.status(200).json(formattedFriends);
 	}

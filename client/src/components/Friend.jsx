@@ -9,7 +9,7 @@ import UserImage from './UserImage';
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const {_id} = useSelector((state) => state.user);
+	const { _id } = useSelector((state) => state.user);
 	const token = useSelector((state) => state.token);
 	const friends = useSelector((state) => state.user.friends);
 
@@ -21,20 +21,32 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
 	const isFriend = Array.isArray(friends) && friends.includes(friendId);
 
+	const toggleFriend = async () => {
+		try {
+			const response = await fetch(
+				`http://localhost:3001/users/${_id}/${friendId}`,
+				{
+					method: "PATCH",
+					headers: {
+						Authorization: `Bearer ${token}`,
+						"Content-Type": "application/json",
+					},
+				}
+			);
 
-	const patchFriend = async () => {
-		const response = await fetch(
-			`http://localhost:3001/users/${_id}/${friendId}`,
-			{
-				method: "PATCH",
-				headers: {
-					Authorization: `Bearer ${token}`,
-					"Content-Type": "application/json",
-				},
+			if (!response.ok) {
+				throw new Error(`Failed to update friend status: ${response.statusText}`);
 			}
-		);
-		const data = await response.json();
-		dispatch(setFriends({ friends: data }));
+
+			const data = await response.json();
+
+			// Assuming that the response data is an updated list of friends
+			dispatch(setFriends({ friends: data }));
+
+		} catch (error) {
+			console.error("Error toggling friend status:", error);
+			// Handle the error as needed, for example, show a message to the user or log it
+		}
 	};
 
 	return (
@@ -66,7 +78,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 				</Box>
 			</FlexBetween>
 			<IconButton
-				onClick={() => patchFriend()}
+				onClick={() => toggleFriend()}
 				sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
 			>
 				{isFriend ? (

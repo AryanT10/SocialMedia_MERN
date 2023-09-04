@@ -41,7 +41,7 @@ The `SocioGram` is a full-fledged social network where users can:
 
 # Getting Started
 
-1.Clone the repository: `git clone` git@github.com:AryanT10/SocialMedia_MERN.git
+1. Clone the repository: `git clone` git@github.com:AryanT10/SocialMedia_MERN.git
 
 2. Install the dependencies: `npm install`
 

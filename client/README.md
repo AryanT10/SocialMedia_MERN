@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+## `SocioGram` - Frontend ( Client Side )
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the frontend of the Social Media Platform project. This frontend application provides the user interface and client-side functionality for the social media platform, enabling users to connect, share, and engage with others.
 
-## Available Scripts
+# Introduction
 
-In the project directory, you can run:
+The `SocioGram` is a full-fledged social network where users can:
 
-### `npm start`
+-Register and log in.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-Add and remove friends.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-Create and delete posts.
 
-### `npm test`
+-Like and unlike posts.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-Comment on posts.
 
-### `npm run build`
+-View user profiles.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-Toggle between light mode and dark mode.And more!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+•User Authentication: Secure user registration and login functionality.
 
-### `npm run eject`
+•Friend Management: Add and remove friends, view the friend list.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+•Post Management: Create, delete, like, and comment on posts.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+•User Profiles: View user profiles with details and posts.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+•Theme Customization: Toggle between light and dark modes.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+•Responsive Design: Optimized for various screen sizes.
 
-## Learn More
+# Prerequisites
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+• Node.js and npm installed.
+• `Backend API` (URL, authentication tokens, etc.) is accessible.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Getting Started
 
-### Code Splitting
+1.Clone the repository: `git clone` git@github.com:AryanT10/SocialMedia_MERN.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Install the dependencies: `npm install`
 
-### Analyzing the Bundle Size
+3. Configure environment variables:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Create a `.env` file in the root directory and configure your environment variables, including the `backend API` URL and any other necessary configurations.
 
-### Making a Progressive Web App
+4. Start the development server: `npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+(Note: Before running it make sure to fetch data from your own database and backend,configure your own secret keys and also that the backend/server side should be running on Port : 3001 )
 
-### Advanced Configuration
+# Dependencies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+`Technologies Used:`
 
-### Deployment
+-React.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+-Redux Toolkit
 
-### `npm run build` fails to minify
+-Material-UI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-Formik
+
+-Yup
+
+-React Router
+
+-Axios
+
+-Emotion (for styling)
+
+-And other dependencies listed in `package.json`

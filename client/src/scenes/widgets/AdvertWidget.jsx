@@ -20,12 +20,12 @@ const AdvertWidget = () => {
 				width="100%"
 				height="auto"
 				alt="advert"
-				src="http://localhost:3001/assets/info4.jpeg"
+				src={`${process.env.REACT_APP_BACKEND_URL}/assets/info4.jpeg`}
 				style={{ borderRadius: "0.75rem", margin: "0.75rem 0" }}
 			/>
 			<FlexBetween>
 				<Typography color={main}>MikaCosmetics</Typography>
-				
+
 				<Typography color={medium}>mikacosmetics.com</Typography>
 			</FlexBetween>
 			<Typography color={medium} m="0.5rem 0">

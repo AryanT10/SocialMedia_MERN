@@ -24,7 +24,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 	const toggleFriend = async () => {
 		try {
 			const response = await fetch(
-				`http://localhost:3001/users/${_id}/${friendId}`,
+				`${process.env.REACT_APP_BACKEND_URL}/users/${_id}/${friendId}`,
 				{
 					method: "PATCH",
 					headers: {

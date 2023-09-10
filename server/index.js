@@ -25,11 +25,11 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use(
-  helmet({
-    crossOriginEmbedderPolicy: false,
-  })
-);
+// app.use(
+//   helmet({
+//     crossOriginEmbedderPolicy: false,
+//   })
+// );
 
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));

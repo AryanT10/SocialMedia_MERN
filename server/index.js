@@ -27,12 +27,6 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.options('auth/login', function (req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader('Access-Control-Allow-Methods', '*');
-  res.setHeader("Access-Control-Allow-Headers", "*");
-  res.end();
-});
 
 // app.use(cors({
 //   origin: "https://sociogram-aryant10.vercel.app",
@@ -62,6 +56,7 @@ app.post("/auth/register", upload.single("picture"), register);
 app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
+app.options("/auth/login", cors());
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);

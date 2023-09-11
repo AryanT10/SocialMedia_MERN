@@ -25,11 +25,12 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-// app.use(
-//   helmet({
-//     crossOriginEmbedderPolicy: false,
-//   })
-// );
+app.use(cors({
+  origin: "https://sociogram-aryant10.vercel.app",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true,
+}));
+
 
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));

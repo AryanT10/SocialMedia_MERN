@@ -25,7 +25,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors(
-  {origin: "http://localhost:3000", }
+  {origin: ["http://localhost:3000","https://sociogram-aryant10.vercel.app","http://sociogram-api.vercel.app"], }
 ));
 app.use(express.json());
 

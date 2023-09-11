@@ -34,7 +34,7 @@ app.use(express.json());
 app.use(morgan("common"));
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: 'https://sociogram-aryant10.vercel.app' }));
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
 /* FILE STORAGE */

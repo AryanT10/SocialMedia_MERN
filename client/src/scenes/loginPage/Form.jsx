@@ -15,6 +15,7 @@ import { useDispatch } from "react-redux";
 import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from '../../components/flexBetween';
+import axios from 'axios';
 
 const registerSchema = yup.object().shape({
 	firstName: yup.string().required("required"),
@@ -80,12 +81,23 @@ const Form = () => {
 	};
 
 	const login = async (values, onSubmitProps) => {
-		const loggedInResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(values),
-		});
-		const loggedIn = await loggedInResponse.json();
+		// const loggedInResponse = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
+		// 	method: "POST",
+		// 	headers: { "Content-Type": "application/json" },
+		// 	body: JSON.stringify(values),
+		// });
+		// const loggedIn = await loggedInResponse.json();
+		const loggedInResponse = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
+			email: values.email,
+			password: values.password,
+		}, {
+			headers: {
+				"Content-Type": "application/json"
+			}
+		})
+
+		const loggedIn = loggedInResponse.data;
+
 		onSubmitProps.resetForm();
 		if (loggedIn) {
 			dispatch(

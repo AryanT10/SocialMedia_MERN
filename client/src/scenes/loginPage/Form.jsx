@@ -83,6 +83,7 @@ const Form = () => {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(values),
+			mode: 'no-cors',
 		});
 		const loggedIn = await loggedInResponse.json();
 		onSubmitProps.resetForm();
